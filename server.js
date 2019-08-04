@@ -111,6 +111,41 @@ app.post("/api/user/", (req, res, next) => {
 })
 
 
+//  store barcode
+app.post("/api/barcode/", (req, res, next) => {
+    console.log("app.post('/api/barcode/'")
+    var errors=[]
+    if (!req.body.barcode){
+        console.log("req.body.barcode=null")
+        errors.push("No barcode specified");
+    }
+    if (errors.length){
+        console.log("errors.length=", errors.length)
+        res.status(400).json({"error":errors.join(",")});
+        return;
+    }
+    var data = {
+        barcode: req.body.barcode
+    }
+    console.log("data:\n", data)
+    var sql ='INSERT INTO barcodes (barcode) VALUES (?)'
+    var params =[data.barcode]
+    db.run(sql, params, function (err, result) {
+        if (err){
+            res.status(400).json({"error": err.message})
+            console.log("error creating new user: ", err.message)
+            return;
+        }
+        console.log("barcode created.")
+        res.json({
+            "message": "success",
+            "data": data,
+            "id" : this.lastID
+        })
+    });
+})
+
+
 
 // Update a user
 //coalesce function = https://www.sqlite.org/lang_corefunc.html#coalesce

@@ -43,3 +43,7 @@ git reset
 jquery.min.map
 added this file to prevent error messages, should not be required?
 possibly due to browser cache doing weird things?
+
+
+https://sqlite.org/cli.html
+http://www.sqlitetutorial.net/sqlite-commands/
