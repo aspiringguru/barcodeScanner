@@ -123,7 +123,7 @@ $(function() {
         },
         state: {
             inputStream: {
-                src: "/test/fixtures/code_128/"
+                src: "images/code_128/"
             },
             decoder : {
                 readers : [{
@@ -158,11 +158,13 @@ $(function() {
             }
 
             if (result.codeResult && result.codeResult.code) {
-                console.log("XXX result.codeResult.code:", result.codeResult.code)
+                console.log("result.codeResult.code:", result.codeResult.code)
                 console.log("result.codeResult:", result.codeResult)
                 console.log("barcode value = result.codeResult.code:", result.codeResult.code)
                 console.log("Quagga.ImageDebug.drawPath result.line")
                 Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
+                //document.getElementById("barcode").innerHTML = result.codeResult.code;
+                document.getElementById("barcode").value = result.codeResult.code;
             }
         }
     });

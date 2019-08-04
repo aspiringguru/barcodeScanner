@@ -22,69 +22,6 @@ app.get("/", (req, res, next) => {
     res.json({"message":"Ok"})
 });
 
-//  quagga_js_get_camera
-app.get("/quagga_js_get_camera", (req, res, next) => {
-    console.log("app.get('/quagga_js_get_camera'");
-    //console.log("__dirname:", __dirname)
-    res.sendFile(path.join(__dirname + '/html/quagga_js_get_camera.html'));
-});
-
-//
-
-/*
-app.get("/quagga_js_static_images", (req, res, next) => {
-    console.log("app.get('/quagga_js_static_images'");
-    //console.log("__dirname:", __dirname)
-    res.sendFile(path.join(__dirname + '/html/quagga_js_static_images.html'));
-});
-*/
-
-/*
-app.get("/css/styles.css", (req, res, next) => {
-    console.log("app.get('/css/styles.css'");
-    //console.log("__dirname:", __dirname)
-    res.sendFile(path.join(__dirname + '/css/styles.css'));
-});
-*/
-
-/*
-app.get("/dist/quagga.js", (req, res, next) => {
-    console.log("app.get('/dist/quagga.js'");
-    //console.log("__dirname:", __dirname)
-    res.sendFile(path.join(__dirname + '/dist/quagga.js'));
-});
-
-app.get("/static_images.js", (req, res, next) => {
-    console.log("app.get('/static_images.js'");
-    //console.log("__dirname:", __dirname)
-    res.sendFile(path.join(__dirname + '/static_images.js'));
-});
-
-app.get("/vendor/jquery-1.9.0.min.js", (req, res, next) => {
-    console.log("app.get('/vendor/jquery-1.9.0.min.js'");
-    //console.log("__dirname:", __dirname)
-    res.sendFile(path.join(__dirname + '/vendor/jquery-1.9.0.min.js'));
-});
-*/
-
-/*
-//  user submits userID
-app.get("/getUserInfo", (req, res, next) => {
-    console.log("app.get('/form'");
-    //console.log("__dirname:", __dirname)
-    res.sendFile(path.join(__dirname + '/html/getUserInfo.html'));
-});
-*/
-
-/*
-//  form based updateuser
-app.get("/adduser", (req, res, next) => {
-    console.log("app.get('/adduser'");
-    //console.log("__dirname:", __dirname)
-    res.sendFile(path.join(__dirname + '/html/adduser.html'));
-});
-*/
-
 // Insert here other API endpoints
 // list all users
 app.get("/api/users", (req, res, next) => {
@@ -211,6 +148,6 @@ app.patch("/api/user/:id", (req, res, next) => {
 // Default response for any other request
 app.use(function(req, res){
     console.log("app.use(function(req, res)  Default response for any other request")
-    //console.log("res.status(404)\n", res.status(404))
+    console.log("res.status(404)\n", res.status(404))
     res.status(404);
 });
