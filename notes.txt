@@ -28,5 +28,13 @@ npm install md5
 
 https://developerhowto.com/2018/12/29/build-a-rest-api-with-node-js-and-express-js/
 
+also good
+https://hackernoon.com/the-definitive-guide-to-express-the-node-js-web-application-framework-649352e2ae87
 
 https://www.getpostman.com/
+
+
+To undo
+git add .
+use
+git reset

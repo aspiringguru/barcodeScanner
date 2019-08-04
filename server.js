@@ -3,8 +3,9 @@ var express = require("express")
 var app = express()
 var db = require("./database.js")
 var md5 = require("md5")
-
+var path = require('path');
 var bodyParser = require("body-parser");
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -20,7 +21,23 @@ app.get("/", (req, res, next) => {
     res.json({"message":"Ok"})
 });
 
+//  user submits userID
+app.get("/getUserInfo", (req, res, next) => {
+    console.log("app.get('/form'");
+    //console.log("__dirname:", __dirname)
+    res.sendFile(path.join(__dirname + '/html/getUserInfo.html'));
+});
+
+//  form based updateuser
+app.get("/adduser", (req, res, next) => {
+    console.log("app.get('/adduser'");
+    //console.log("__dirname:", __dirname)
+    res.sendFile(path.join(__dirname + '/html/adduser.html'));
+});
+
+
 // Insert here other API endpoints
+// list all users
 app.get("/api/users", (req, res, next) => {
     console.log("app.get('/api/users'")
     var sql = "select * from user"
@@ -40,9 +57,16 @@ app.get("/api/users", (req, res, next) => {
       });
 });
 
+app.post("/api/getUserInfo/", (req, res, next) => {
+    console.log("app.post('/api/getUserInfo/'");
+    var id = req.body.id;
+    console.log("id:", id)
+    res.redirect('/api/user/'+id);
+})
+
 // Get a single user by id
 app.get("/api/user/:id", (req, res, next) => {
-    console.log("/api/user/:id, id=", req.params.id)
+    console.log("/api/user/:id, id='"+req.params.id+"'")
     var sql = "select * from user where id = ?"
     var params = [req.params.id]
     db.get(sql, params, (err, row) => {
@@ -51,7 +75,7 @@ app.get("/api/user/:id", (req, res, next) => {
           console.log("error getting user: ", err.message)
           return;
         }
-        console.log("success getting user info, row=", row)
+        console.log("success getting user info, row=\n", row)
         res.json({
             "message":"success",
             "data":row
@@ -105,7 +129,7 @@ app.post("/api/user/", (req, res, next) => {
 // Update a user
 //coalesce function = https://www.sqlite.org/lang_corefunc.html#coalesce
 app.patch("/api/user/:id", (req, res, next) => {
-    console.log("Update a user: app.patch('/api/user/:id' ")
+    console.log("Update a user: app.patch('/api/user/:id' :", req.params.id)
     var data = {
         name: req.body.name,
         email: req.body.email,
