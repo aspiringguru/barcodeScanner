@@ -1,0 +1,4 @@
+node_modules/
+passwords.js
+config.js
+*.db

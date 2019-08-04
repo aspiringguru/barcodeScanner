@@ -1,3 +1,32 @@
 https://github.com/serratus/quaggaJS
 
 npm install quagga
+
+to serve webpages with node, use http-server in directory containing index.html
+
+if http-server not installed.
+npm install -g http-server
+on windows, need to have both these directories in PATH
+C:\Users\Matthew\AppData\Roaming\npm
+C:\Users\Matthew\AppData\Roaming\npm\node_modules\http-server\bin
+
+refer for config issues
+https://www.npmjs.com/package/http-server
+
+
+https://www.npmjs.com/package/sqlite3
+npm install sqlite3
+
+
+npm list -g --depth 0
+
+
+npm install express
+npm install sqlite3
+npm install md5
+
+
+https://developerhowto.com/2018/12/29/build-a-rest-api-with-node-js-and-express-js/
+
+
+https://www.getpostman.com/
