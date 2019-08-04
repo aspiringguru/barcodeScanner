@@ -123,7 +123,7 @@ $(function() {
         },
         state: {
             inputStream: {
-                src: "../test/fixtures/code_128/"
+                src: "/test/fixtures/code_128/"
             },
             decoder : {
                 readers : [{
