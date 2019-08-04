@@ -30,11 +30,14 @@ app.get("/quagga_js_get_camera", (req, res, next) => {
 });
 
 //
+
+/*
 app.get("/quagga_js_static_images", (req, res, next) => {
     console.log("app.get('/quagga_js_static_images'");
     //console.log("__dirname:", __dirname)
     res.sendFile(path.join(__dirname + '/html/quagga_js_static_images.html'));
 });
+*/
 
 /*
 app.get("/css/styles.css", (req, res, next) => {
@@ -44,6 +47,7 @@ app.get("/css/styles.css", (req, res, next) => {
 });
 */
 
+/*
 app.get("/dist/quagga.js", (req, res, next) => {
     console.log("app.get('/dist/quagga.js'");
     //console.log("__dirname:", __dirname)
@@ -61,21 +65,25 @@ app.get("/vendor/jquery-1.9.0.min.js", (req, res, next) => {
     //console.log("__dirname:", __dirname)
     res.sendFile(path.join(__dirname + '/vendor/jquery-1.9.0.min.js'));
 });
+*/
 
+/*
 //  user submits userID
 app.get("/getUserInfo", (req, res, next) => {
     console.log("app.get('/form'");
     //console.log("__dirname:", __dirname)
     res.sendFile(path.join(__dirname + '/html/getUserInfo.html'));
 });
+*/
 
+/*
 //  form based updateuser
 app.get("/adduser", (req, res, next) => {
     console.log("app.get('/adduser'");
     //console.log("__dirname:", __dirname)
     res.sendFile(path.join(__dirname + '/html/adduser.html'));
 });
-
+*/
 
 // Insert here other API endpoints
 // list all users
